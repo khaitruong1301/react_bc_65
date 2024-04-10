@@ -1,0 +1,3 @@
+#Không muốn đưa file nào lên git thì sẽ để đường dẫn file đó tại tập tin này
+node_modules
+dist
