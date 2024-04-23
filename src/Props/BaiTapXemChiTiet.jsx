@@ -1,5 +1,6 @@
 //rafce
 import React, { useState } from 'react'
+import SanPham from './SanPham'
 
 const data = [
     { "maSP": 1, "tenSP": "VinSmart Live", "manHinh": "AMOLED, 6.2, Full HD+", "heDieuHanh": "Android 9.0 (Pie)", "cameraTruoc": "20 MP", "cameraSau": "Chính 48 MP & Phụ 8 MP, 5 MP", "ram": "4 GB", "rom": "64 GB", "giaBan": 5700000, "hinhAnh": "./img/vsphone.jpg" },
@@ -25,16 +26,7 @@ const BaiTapXemChiTiet = () => {
     const renderProduct = () => {
         return data.map((item) => {
             return <div className='col-4 mt-2' key={item.maSP}>
-                <div className='card'>
-                    <img src={item.hinhAnh} alt='...' />
-                    <div className='card-body'>
-                        <h3>{item.tenSP}</h3>
-                        <p>{item.giaBan}</p>
-                        <button className='btn btn-dark' onClick={()=>{
-                            xemChiTiet(item)
-                        }}>Xem chi tiết</button>
-                    </div>
-                </div>
+                <SanPham item={item} xemChiTiet={xemChiTiet}/>
             </div>
         })
     }

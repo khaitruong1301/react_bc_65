@@ -13,6 +13,8 @@ import DemoProps from './Props/DemoProps';
 import ExWithMap_Props from './Props/ExWithMap_Props';
 import DemoChildrenProps from './Props/DemoChildrenProps';
 import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet';
+import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore';
+import ExCart from './Props/ExCart/ExCart';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 // console.log(<div></div>);
 
@@ -34,7 +36,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <div>abc</div>
         <ExWithMap_Props />
       </DemoChildrenProps> */}
-      <BaiTapXemChiTiet />
+      {/* <BaiTapXemChiTiet /> */}
+      {/* <ExerciseCarStore /> */}
+      <ExCart />
   </div>,
 )
 
