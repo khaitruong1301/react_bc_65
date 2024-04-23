@@ -1,45 +1,48 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ButtonPrimary } from './components/ButtonPrimary';
-import Header from './components/Header';
-import HomePage from './components/HomePage';
-import Databinding from './databinding/Databinding';
-import HandleEvent from './handleEvent/HandleEvent';
-import DemoState from './state/DemoState';
-import StyleWithComponent from './StyleWithComponent/StyleWithComponent';
 import './assets/scss/index.scss'
-import RenderWithMap from './RenderWithMap/RenderWithMap';
-import DemoProps from './Props/DemoProps';
-import ExWithMap_Props from './Props/ExWithMap_Props';
-import DemoChildrenProps from './Props/DemoChildrenProps';
-import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet';
-import ExerciseCarStore from './Props/ExerciseCarStore/ExerciseCarStore';
-import ExCart from './Props/ExCart/ExCart';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-// console.log(<div></div>);
-
-
+//Thư viện react router dom giúp chia các component thành page 
+import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import HeaderHome from './components/HeaderHome'
+import HomeTemplate from './templates/HomeTemplate'
+import UserTemplate from './templates/UserTemplate'
+import Profile from './pages/Profile'
+import HistoryOrder from './pages/HistoryOrder'
+import ChangePassword from './pages/ChangePassword'
+import Page404 from './pages/Page404'
+import ForgotPass from './pages/ForgotPass'
+import FormComponent from './pages/FormComponent/FormComponent'
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div>
-      {/* <HomePage /> */}
-      {/* <Databinding /> */}
-      {/* <HandleEvent /> */}
-      {/* <DemoState /> */}
-      {/* <StyleWithComponent />
-      <div className='container'>
-        <p className='p-primary'>abc</p>
-      </div> */}
-      {/* <RenderWithMap /> */}
-      {/* <DemoProps /> */}
-      {/* <ExWithMap_Props /> */}
-      {/* <DemoChildrenProps>
-        <div>abc</div>
-        <ExWithMap_Props />
-      </DemoChildrenProps> */}
-      {/* <BaiTapXemChiTiet /> */}
-      {/* <ExerciseCarStore /> */}
-      <ExCart />
-  </div>,
+    <BrowserRouter>
+     
+      <Routes>
+        <Route path='' element={<HomeTemplate />}>
+          <Route index element={<Home />}></Route>
+          <Route path='home' element={<Home />}></Route>
+          <Route path='about' element={<About />}></Route>
+          <Route path='contact' element={<Contact />}></Route>
+          <Route path='register' element={<Register />}></Route>
+          <Route path='login' element={<Login />}></Route>
+          <Route path='forgot' element={<ForgotPass />}></Route>
+          <Route path='form' element={<FormComponent />}></Route>
+        </Route>
+        <Route path='user' element={<UserTemplate />}>
+          <Route path='profile' element={<Profile />}></Route>
+          <Route path='history' element={<HistoryOrder />}></Route>
+          <Route path='change-password' element={<ChangePassword />}></Route>
+          <Route path='*' element={<Navigate to="/user/profile" />}></Route>
+        </Route>
+        <Route path='*' element={<Page404 />}></Route>
+
+      </Routes>
+    </BrowserRouter>
 )
+
+//window: ctrl + space
+//mac: option + esc
 
 
