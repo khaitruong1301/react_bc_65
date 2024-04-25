@@ -16,6 +16,7 @@ import ChangePassword from './pages/ChangePassword'
 import Page404 from './pages/Page404'
 import ForgotPass from './pages/ForgotPass'
 import FormComponent from './pages/FormComponent/FormComponent'
+import FormikDemo from './pages/FormComponent/FormikDemo'
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
      
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='login' element={<Login />}></Route>
           <Route path='forgot' element={<ForgotPass />}></Route>
           <Route path='form' element={<FormComponent />}></Route>
+          <Route path='formik' element={<FormikDemo />}></Route>
         </Route>
         <Route path='user' element={<UserTemplate />}>
           <Route path='profile' element={<Profile />}></Route>
