@@ -26,13 +26,16 @@ const HeaderHome = () => {
                     <li className="nav-item">
                         <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/form">Form Demo</NavLink>
                     </li>
-                    {/* <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <li className="nav-item">
+                        <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/formik">Formik</NavLink>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux demo</a>
                         <div className="dropdown-menu" aria-labelledby="dropdownId">
-                            <a className="dropdown-item" href="#">Action 1</a>
-                            <a className="dropdown-item" href="#">Action 2</a>
+                            <NavLink className="dropdown-item" to="/number-state">Number state</NavLink>
+                            <NavLink className="dropdown-item" to="/chat-app">Chat app</NavLink>
                         </div>
-                    </li> */}
+                    </li>
                     
                 </ul>
                 <form className="d-flex my-2 my-lg-0">
