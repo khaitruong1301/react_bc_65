@@ -22,6 +22,10 @@ import {store} from './redux/store'
 import {Provider} from 'react-redux'
 import NumberState from './pages/DemoRedux/NumberState'
 import ChatApp from './pages/DemoRedux/ChatApp'
+import CartPage from './pages/Carts/CartPage'
+import ProductList from './pages/Products/ProductList'
+import TableListSinhVien from './pages/QuanLySinhVien/TableListSinhVien'
+import FormSinhVien from './pages/QuanLySinhVien/FormSinhVien'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
@@ -39,6 +43,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='formik' element={<FormikDemo />}></Route>
           <Route path='number-state' element={<NumberState />}></Route>
           <Route path='chat-app' element={<ChatApp />}></Route>
+          <Route path='cart-page' element={<CartPage />}></Route>
+          <Route path='product-list' element={<ProductList />}></Route>
+          <Route path='table-list-sinh-vien' element={<TableListSinhVien />}></Route>
+          <Route path='form-sinh-vien' element={<FormSinhVien />}></Route>
         </Route>
         <Route path='user' element={<UserTemplate />}>
           <Route path='profile' element={<Profile />}></Route>

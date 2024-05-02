@@ -29,16 +29,25 @@ const HeaderHome = () => {
                     <li className="nav-item">
                         <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/formik">Formik</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/product-list">Products</NavLink>
+                    </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux demo</a>
                         <div className="dropdown-menu" aria-labelledby="dropdownId">
                             <NavLink className="dropdown-item" to="/number-state">Number state</NavLink>
                             <NavLink className="dropdown-item" to="/chat-app">Chat app</NavLink>
+                            <NavLink className="dropdown-item" to="/form-sinh-vien">Form Sinh Vien</NavLink>
+                            <NavLink className="dropdown-item" to="/table-list-sinh-vien">Table list sinh vien</NavLink>
                         </div>
                     </li>
                     
                 </ul>
                 <form className="d-flex my-2 my-lg-0">
+                <NavLink className="text-white mx-2" to="/cart-page">
+                   (1) <i className='fa fa-cart-plus fs-1'></i>
+
+                </NavLink>
                     <input className="form-control me-sm-2" type="text" placeholder="Search" />
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
                         Search
