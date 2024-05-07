@@ -34,5 +34,4 @@ const Databinding = () => {
         </div>
     )
 }
-
 export default Databinding

@@ -6,7 +6,7 @@ export const store = configureStore({
     reducer: {
         //state ứng dụng lưu tại đây
         number : (state = 1, action) => {
-            console.log('action number')
+           // console.log('action number')
             if(action.type === 'LIKE_NUMBER') {
                 state = action.payload;
             }

@@ -41,7 +41,23 @@ const HeaderHome = () => {
                             <NavLink className="dropdown-item" to="/table-list-sinh-vien">Table list sinh vien</NavLink>
                         </div>
                     </li>
-                    
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lifecycle - hook</a>
+                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                            <NavLink className="dropdown-item" to="/useEffect-mouting">Mouting component</NavLink>
+                            <NavLink className="dropdown-item" to="/useEffect-updating">Updating component</NavLink>
+                            <NavLink className="dropdown-item" to="/useEffect-unmount">Unmount component</NavLink>
+                        </div>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hook tối ưu render</a>
+                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                            <NavLink className="dropdown-item" to="/useCallBack">UseCallback</NavLink>
+                            <NavLink className="dropdown-item" to="/useMemo">useMemo</NavLink>
+                         
+                          
+                        </div>
+                    </li>
                 </ul>
                 <form className="d-flex my-2 my-lg-0">
                 <NavLink className="text-white mx-2" to="/cart-page">
