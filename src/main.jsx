@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import './assets/scss/index.scss'
 //Thư viện react router dom giúp chia các component thành page 
-import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom'
+import {BrowserRouter,Routes,Route, Navigate, unstable_HistoryRouter as HistoryRouter} from 'react-router-dom';
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -33,9 +33,17 @@ import DemoUnmountComponent from './pages/DemoUseEffect/DemoUnmountComponent'
 import DemoUseCallback from './pages/Demo_UseCallback_UseMemo/DemoUseCallback'
 import DemoUseMemo from './pages/Demo_UseCallback_UseMemo/DemoUseMemo'
 import Detail_UseParam from './pages/Detail_UseParam'
+import DemoUseHistory from './pages/Hook_Router/DemoUseMatch'
+import DemoUseMatch from './pages/Hook_Router/DemoUseMatch'
+import DemoUseSearchParam from './pages/Hook_Router/DemoUseSearchParam'
+import DemoUseRef from './pages/Demo_UseCallback_UseMemo/DemoUseRef'
+//Cấu hình biến để chuyển hướng trang
+import {createBrowserHistory} from 'history';
+//history tương tự navigate dùng để chuyển hướng trang ở 1 trang không phải component
+export const historyRouter = createBrowserHistory();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+    <HistoryRouter history={historyRouter}>
     <Provider store={store}>
       <Routes>
         <Route path='' element={<HomeTemplate />}>
@@ -64,6 +72,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='detail'>
             <Route path=':idProduct' element={<Detail_UseParam />}></Route>
           </Route>
+          <Route path='use-history' element={<DemoUseHistory />}></Route>
+          <Route path='use-match-param' element={<DemoUseMatch />}></Route>
+          <Route path='use-search-param' element={<DemoUseSearchParam />}></Route>
+          <Route path='use-ref' element={<DemoUseRef />}></Route>
 
         </Route>
         <Route path='user' element={<UserTemplate />}>
@@ -72,10 +84,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='change-password' element={<ChangePassword />}></Route>
           <Route path='*' element={<Navigate to="/user/profile" />}></Route>
         </Route>
-        <Route path='*' element={<Page404 />}></Route>
+        {/* <Route path='*' element={<Page404 />}></Route> */}
       </Routes>
       </Provider>
-    </BrowserRouter>
+    </HistoryRouter>
 )
 
 //window: ctrl + space
