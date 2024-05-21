@@ -2,21 +2,29 @@ import React from 'react'
 import {useFormik} from 'formik'
 import axios from 'axios'
 import { TOKEN_AUTHOR, setCookie, setDataTextStorage } from '../util/utilFunction';
+import useRedux from '../CustomHook/useRedux';
+import { loginAction, loginActionApi } from '../redux/reducers/userReducer';
 
 const Login = () => {
+  const {dispatch} = useRedux();
+
   const userLoginForm = useFormik({
     initialValues:{
       email:'',
       password:''
     },
     onSubmit:  async (values) => {
-      // console.log(values)
-      //Gọi api để đăng nhập
-      const res = await axios.post('https://apistore.cybersoft.edu.vn/api/Users/signin', values);
-      console.log(res.data);
-      //Lưu vào localstorage
-      setDataTextStorage(TOKEN_AUTHOR, res.data.content.accessToken);
-      setCookie(TOKEN_AUTHOR,res.data.content.accessToken);
+
+      // //Lấy được dữ liệu từ api đưa lên redux
+      // const action = loginAction(res.data.content);
+      //action = {type:'', payload: ...} :action Creator
+      //actionThunk = (dispatch) => { //actionThunk 
+      // //thực hiện xử lý api (call 10 api)
+      // payload 
+      // }
+      const actionThunk = loginActionApi(values.email,values.password);
+      dispatch(actionThunk);
+
     }
   });
   return (

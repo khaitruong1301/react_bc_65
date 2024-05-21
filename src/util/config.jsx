@@ -39,7 +39,7 @@ httpStore.interceptors.request.use((req) => {
     const token = getDataTextStorage(TOKEN_AUTHOR);
     req.headers = {
         ...req.headers,
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
     }
     return req;
 },err => {

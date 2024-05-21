@@ -1,7 +1,23 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import useRedux from '../CustomHook/useRedux'
 
 const HeaderHome = () => {
+    //cần lấy state login về
+    const {state,dispatch} = useRedux();
+    const {userLogin} = state.userReducer;
+    console.log(state.userReducer.userLogin);
+
+    const renderLoginLink = () => {
+        if(userLogin) {
+            //nếu có dữ liệu trên store thì là đăng nhập rồi
+            return <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to={'/user/profile'}>Hello {userLogin.email}</NavLink>
+        }
+        //Chưa có dữ liệu trên store thì là link login
+        return <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/login">Login</NavLink>
+    }
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             <NavLink className="navbar-brand" to="/">React hook</NavLink>
@@ -10,6 +26,9 @@ const HeaderHome = () => {
                 <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                     <li className="nav-item">
                         <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/" aria-current="page">Home <span className="visually-hidden">(current)</span></NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/demo-antd" aria-current="page">Demo antd <span className="visually-hidden">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink style={({isActive}) => isActive ? {border:'1px solid orange'} : {} } className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/about">About</NavLink>
@@ -21,7 +40,7 @@ const HeaderHome = () => {
                         <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/register">Register</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/login">Login</NavLink>
+                        {renderLoginLink()}
                     </li>
                     <li className="nav-item">
                         <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/form">Form Demo</NavLink>
