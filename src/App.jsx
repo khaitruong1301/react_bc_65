@@ -45,6 +45,9 @@ import CreateUser from './pages/AdminUsers/CreateUser';
 import Loading from './components/Loading';
 import useRedux from './CustomHook/useRedux';
 import MessageNotify from './components/MessageNotify';
+import ReactQueryCreateUser from './pages/AdminUsers/ReactQueryCreateUser';
+import ReactQueryUsers from './pages/AdminUsers/ReactQueryUsers';
+import ReactQueryUserPaging from './pages/AdminUsers/ReactQueryUserPaging';
 
 
 
@@ -110,6 +113,10 @@ const App = () => {
               <Route path=':id' element={<DetailUser />}></Route>
             </Route>
             <Route path='user-create' element={<CreateUser />}></Route>
+            <Route path='react-query-users' element={<ReactQueryUsers />}></Route>
+            <Route path='react-query-user-paging' element={<ReactQueryUserPaging />}></Route>
+
+            <Route path='react-query-create-user' element={<ReactQueryCreateUser />}></Route>
         </Route>
       </Routes>
 

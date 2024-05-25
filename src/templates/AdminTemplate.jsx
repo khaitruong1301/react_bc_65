@@ -45,6 +45,30 @@ const AdminTemplate = () => {
                             onClick:(event)=>{
                                 navigate('/admin/user-create')
                             }
+                        },
+                        {
+                            key: '3',
+                            icon: <UserOutlined />,
+                            label: 'RQ-User-List',
+                            onClick:(event)=>{
+                                navigate('/admin/react-query-users')
+                            }
+                        },
+                        {
+                            key: '4',
+                            icon: <UserAddOutlined />,
+                            label: 'RQ-Create-User',
+                            onClick:(event)=>{
+                                navigate('/admin/react-query-create-user')
+                            }
+                        },
+                        {
+                            key: '5',
+                            icon: <UserAddOutlined />,
+                            label: 'RQ-User-paging',
+                            onClick:(event)=>{
+                                navigate('/admin/react-query-user-paging')
+                            }
                         }
                     ]}
                 />
