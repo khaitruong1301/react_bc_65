@@ -48,6 +48,11 @@ import MessageNotify from './components/MessageNotify';
 import ReactQueryCreateUser from './pages/AdminUsers/ReactQueryCreateUser';
 import ReactQueryUsers from './pages/AdminUsers/ReactQueryUsers';
 import ReactQueryUserPaging from './pages/AdminUsers/ReactQueryUserPaging';
+import DemoHOC from './HOC/DemoHOC';
+import ModalRedux from './HOC/ModalRedux';
+import HomePageDesktop from './pages/HomePage/HomePageDesktop';
+import ResponsiveItem from './HOC/ResponsiveItem';
+import HomePageMobile from './pages/HomePage/HomePageMobile';
 
 
 
@@ -64,7 +69,7 @@ const App = () => {
     <HistoryRouter history={historyRouter}>
       <Routes>
         <Route path='' element={<HomeTemplate />}>
-          <Route index element={<Home />}></Route>
+          <Route index element={<ResponsiveItem component={<HomePageDesktop />} mobileComponent={<HomePageMobile />} />}></Route>
           <Route path='state' element={<DemoState />}></Route>
           <Route path='home' element={<Home />}></Route>
           <Route path='home' element={<Home />}></Route>
@@ -85,6 +90,7 @@ const App = () => {
           <Route path='useEffect-updating' element={<DemoUpdatingComponent />}></Route>
           <Route path='useEffect-unmount' element={<DemoUnmountComponent />}></Route>
           <Route path='useCallBack' element={<DemoUseCallback />}></Route>
+          <Route path='demo-hoc' element={<DemoHOC />}></Route>
           <Route path='useMemo' element={<DemoUseMemo />}></Route>
           <Route path='detail'>
             <Route path=':idProduct' element={<Detail_UseParam />}></Route>
@@ -122,6 +128,7 @@ const App = () => {
 
       {state.loadingReducer.isLoading && <Loading /> } 
       <MessageNotify />
+      <ModalRedux />
     </HistoryRouter>
   )
 }

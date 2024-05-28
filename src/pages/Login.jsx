@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useFormik} from 'formik'
 import axios from 'axios'
 import { TOKEN_AUTHOR, setCookie, setDataTextStorage } from '../util/utilFunction';
 import useRedux from '../CustomHook/useRedux';
 import { loginAction, loginActionApi } from '../redux/reducers/userReducer';
+import { setSubmitModalFunctionAction } from '../redux/reducers/modalReducer';
 
 const Login = () => {
   const {dispatch} = useRedux();
@@ -27,6 +28,16 @@ const Login = () => {
 
     }
   });
+
+  useEffect(() => {
+    //mouting component
+    const payload = userLoginForm.handleSubmit;
+    const action = setSubmitModalFunctionAction(payload);
+    dispatch(action);
+  },[]);
+
+
+
   return (
     <div className='container'>
       <form className='w-50 mx-auto' onSubmit={userLoginForm.handleSubmit}>

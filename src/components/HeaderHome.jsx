@@ -51,6 +51,9 @@ const HeaderHome = () => {
                     <li className="nav-item">
                         <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/product-list">Products</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/demo-hoc">HOC</NavLink>
+                    </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Redux demo</a>
                         <div className="dropdown-menu" aria-labelledby="dropdownId">

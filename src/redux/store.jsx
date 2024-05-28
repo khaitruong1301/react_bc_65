@@ -4,6 +4,7 @@ import sinhVienReducer from './reducers/sinhVienReducer';
 import userReducer from './reducers/userReducer';
 import loadingReducer from './reducers/loadingReducer';
 import messageReducer from './reducers/messageReducer';
+import modalReducer from './reducers/modalReducer';
 
 export const store = configureStore({
     reducer: {
@@ -32,7 +33,9 @@ export const store = configureStore({
         sinhVienReducer,
         userReducer,
         loadingReducer,
-        messageReducer
+        messageReducer,
+        modalReducer
+
         //redux trả về giá trị mới thì component mới render lại (so sánh này là shallow compare)
     }
 })

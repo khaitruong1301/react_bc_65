@@ -11,6 +11,7 @@ const useGetApi = (url) => {
     const [res,setRes] = useState({});
     const getApi = async () => {
         const ressult = await httpStore.get(url);
+    
         setRes(ressult.data);
     }
     useEffect(() => {
